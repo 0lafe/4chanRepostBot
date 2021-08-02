@@ -7,12 +7,12 @@ parentDirPath = str(pathlib.Path(__file__).parent.absolute())
 
 def uploadPosts(imgFileLocations, thread):
     for i, aimgFileLocation in enumerate(imgFileLocations):
-        print('ding ding')
         ID = thread.ReplyIDs[i]
         if "." in aimgFileLocation:
             extension = getFileExtension(aimgFileLocation)
             if extension == ".png":
                 convert(aimgFileLocation)
+            aimgFileLocation = checkFileSize(aimgFileLocation)
         uploadTwitter(aimgFileLocation, thread, i, ID)
 
 def getName(imgURL, board):

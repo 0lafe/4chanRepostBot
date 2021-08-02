@@ -1,4 +1,5 @@
 from PIL import Image
+import os
 
 def reSize(imgPath):
     img = Image.open(imgPath)  
@@ -12,3 +13,10 @@ def convert(path1): #converts png to jpg for some platforms
     path2 = path1[:(len(path1)-3)] + "jpeg"
     im2.save(path2)
     return path2
+
+def checkFileSize(imgPath):
+    fileSize =  os.path.getsize(imgPath)
+    if fileSize > 3355443:
+        return ""
+    else:
+        return imgPath

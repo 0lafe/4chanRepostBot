@@ -17,11 +17,6 @@ def uploadTwitter(pathi, thread, i, ID):
         token = thread.OPtoken
         tokens = thread.OPtokens
 
-    # print (authv)
-    # print (auths)
-    # print (token)
-    # print (tokens)
-    print('post!')
     auth = tweepy.OAuthHandler(authv, auths)
     auth.set_access_token(token, tokens)
     api = tweepy.API(auth)
@@ -30,7 +25,6 @@ def uploadTwitter(pathi, thread, i, ID):
         message = message[:139]
     if thread.currentIDs[i] != thread.threadID:
         if message != thread.MSGS[i-1]:
-            print('dong dong')
             replyID = thread.TwitterIDs[0]
             if len(ID) > 0:
                 for i, aID in enumerate(thread.postIDs):
@@ -46,7 +40,6 @@ def uploadTwitter(pathi, thread, i, ID):
                 tweet = api.update_status(message, in_reply_to_status_id = replyID)
         else:
             thread.TwitterIDs.append(thread.TwitterIDs[i-1])
-            print('ding dong')
     else:
         if "." in pathi:
             tweet = api.update_with_media(pathi, status=message)

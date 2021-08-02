@@ -2,7 +2,7 @@ from Grabbers import *
 from postClass import thread
 
 
-URL = 'https://boards.4channel.org/lit/thread/18765864' #Url you wish to download from
+URL = 'https://boards.4channel.org/lit/thread/18759770' #Url you wish to download from
 allHtmlContent = requests.get(URL) #gets all the html content from the URL
 print("Website Captured!")
 crash = [".webm", '.gif'] #files that cant be uploaded to the certain site
