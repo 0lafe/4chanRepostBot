@@ -37,9 +37,9 @@ def uploadTwitter(pathi, thread, i, ID):
                     if aID == ID:
                         replyID = thread.TwitterIDs[i]
             if replyID == thread.TwitterIDs[0]:
-                message = '@LafeChan'+ thread.board + '' + message
+                message = '@LafeChan'+ thread.board + ' ' + message
             else:
-                message = '@ylylrepost' + '' + message
+                message = '@ylylrepost' + ' ' + message
             if "." in pathi:
                 tweet = api.update_with_media(pathi, status=message, in_reply_to_status_id = replyID)
             else:

@@ -25,7 +25,7 @@ def saveFile(imgURLs, board): #saves the file from each post
             fullURL = str("http://" + imgURL)
             savedFile = requests.get(fullURL, allow_redirects=True)
             fileType = getFileExtension(fullURL)
-            name = "\\files\\" + getName(imgURL, board)
+            name = "/files/" + getName(imgURL, board)
             realSavedPath = parentDirPath + name + fileType
             open(realSavedPath, 'wb').write(savedFile.content)
             paths.append(realSavedPath)

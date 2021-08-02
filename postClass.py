@@ -13,7 +13,7 @@ class thread:
         self.allPosts = grabReplies(self.OP, self.allHtmlContent)
 
     def removeReposts(self): #removes posts already uploaded
-        fullPath = parentDirPath + "\\threadIDs\\" + str(self.threadID) + ".txt"
+        fullPath = parentDirPath + "/threadIDs/" + str(self.threadID) + ".txt"
         try:
             with open(fullPath, "r") as file:
                 alreadyUPloadedIDs = file.read()
@@ -79,7 +79,7 @@ class thread:
             a = 'r'
         Files = ["TwitterIDs", "postIDs"]
         for file in Files:
-            path = parentDirPath + "//replyIDs//" + str(self.threadID) + file + ".txt"
+            path = parentDirPath + "/replyIDs/" + str(self.threadID) + file + ".txt"
             try:
                 with open(path, a) as f:
                     if action == "write":
@@ -100,12 +100,12 @@ class thread:
         self.postIDs = inputIDs[1]
         
     def getCurrentIDs(self):
-        path = parentDirPath + "//threadIDs//" + str(self.threadID) + ".txt"
+        path = parentDirPath + "/threadIDs/" + str(self.threadID) + ".txt"
         with open(path, "r") as f:
             self.currentIDs = strToList(f.read(), ",")
 
     def loadAuth(self):
-        path = parentDirPath + "//authFiles.json"
+        path = parentDirPath + "/authFiles.json"
         with open(path) as f:
             tokens = json.load(f)
         self.replyauthv = tokens['REPLYauthv']

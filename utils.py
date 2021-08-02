@@ -90,7 +90,7 @@ def stripID(post):
     return ID
 
 def writeIDs(IDList, OPID):
-    rPath = parentDirPath + "\\threadIDs\\" + str(OPID) + ".txt"
+    rPath = parentDirPath + "/threadIDs/" + str(OPID) + ".txt"
     sIDList = listToStr(IDList, ",")
     with open(rPath, "w") as file:
         file.write(sIDList)
