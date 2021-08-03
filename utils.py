@@ -1,11 +1,14 @@
+from progressbar import printProgressBar
 from imgUtils import *
 from tweeting import *
 import pathlib
 import json
+from progressbar import printProgressBar
 
 parentDirPath = str(pathlib.Path(__file__).parent.absolute())
 
 def uploadPosts(imgFileLocations, thread):
+    totalPosts = len(imgFileLocations)
     for i, aimgFileLocation in enumerate(imgFileLocations):
         ID = thread.ReplyIDs[i]
         if "." in aimgFileLocation:
@@ -14,6 +17,7 @@ def uploadPosts(imgFileLocations, thread):
                 convert(aimgFileLocation)
             aimgFileLocation = checkFileSize(aimgFileLocation)
         uploadTwitter(aimgFileLocation, thread, i, ID)
+        printProgressBar(i, totalPosts)
 
 def getName(imgURL, board):
     p1 = imgURL.index(board)+len(board)+1

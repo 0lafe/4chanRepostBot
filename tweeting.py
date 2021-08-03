@@ -45,6 +45,5 @@ def uploadTwitter(pathi, thread, i, ID):
             tweet = api.update_with_media(pathi, status=message)
         else:
             tweet = api.update_status(message)
-            print("dun goofed")
     ID = tweet.id_str
     thread.TwitterIDs.append(ID)
