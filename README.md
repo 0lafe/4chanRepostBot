@@ -4,10 +4,15 @@ Welcome to my 4chan repost bot. This is a WiP twitter bot manager to emulate som
 
 
 Current features:
-  Can manage multiple accounts
-  treads some as thread posters and one as a universal reply bot
-  some checks for image incompatibility
+
+    Can manage multiple accounts
+  
+    treads some as thread posters and one as a universal reply bot
+  
+    some checks for image incompatibility
   
 Planned features:
-  twitter to website interactions when twitter users comment
-  automatic multiple thread/board support
+
+    twitter to website interactions when twitter users comment
+  
+    automatic multiple thread/board support
