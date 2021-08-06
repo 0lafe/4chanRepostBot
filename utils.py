@@ -6,6 +6,7 @@ import json
 from progressbar import printProgressBar
 
 parentDirPath = str(pathlib.Path(__file__).parent.absolute())
+PLACEHOLDERNAME = "placeHolder.file"
 
 def uploadPosts(imgFileLocations, thread):
     totalPosts = len(imgFileLocations)
@@ -17,7 +18,7 @@ def uploadPosts(imgFileLocations, thread):
                 convert(aimgFileLocation)
             aimgFileLocation = checkFileSize(aimgFileLocation)
         uploadTwitter(aimgFileLocation, thread, i, ID)
-        printProgressBar(i, totalPosts)
+        printProgressBar(i, totalPosts-1)
 
 def getName(imgURL, board):
     p1 = imgURL.index(board)+len(board)+1
@@ -118,3 +119,11 @@ def listToStr(list, Seperator):
         sList = sList + element + Seperator
     return sList
     
+
+def deleteImageFiles():
+    filePath = parentDirPath + "/files/"
+    files = os.listdir(filePath)
+    for file in files:
+        if file != PLACEHOLDERNAME:
+            afilePath = parentDirPath + file
+            os.remove(afilePath)

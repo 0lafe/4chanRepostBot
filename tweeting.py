@@ -30,14 +30,10 @@ def uploadTwitter(pathi, thread, i, ID):
                 for i, aID in enumerate(thread.postIDs):
                     if aID == ID:
                         replyID = thread.TwitterIDs[i]
-            if replyID == thread.TwitterIDs[0]:
-                message = '@LafeChan'+ thread.board + ' ' + message
-            else:
-                message = '@ylylrepost' + ' ' + message
             if "." in pathi:
-                tweet = api.update_with_media(pathi, status=message, in_reply_to_status_id = replyID)
+                tweet = api.update_with_media(pathi, status=message, in_reply_to_status_id = replyID, auto_populate_reply_metadata=True)
             else:
-                tweet = api.update_status(message, in_reply_to_status_id = replyID)
+                tweet = api.update_status(message, in_reply_to_status_id = replyID, auto_populate_reply_metadata=True)
         else:
             thread.TwitterIDs.append(thread.TwitterIDs[i-1])
     else:

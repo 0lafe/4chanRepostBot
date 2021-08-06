@@ -2,7 +2,7 @@ from Grabbers import *
 from postClass import thread
 
 
-URL = 'https://boards.4channel.org/lit/thread/18765725' #Url you wish to download from
+URL = 'https://boards.4channel.org/lit/thread/18793172' #Url you wish to download from
 allHtmlContent = requests.get(URL) #gets all the html content from the URL
 print("Website Captured!")
 crash = [".webm", '.gif'] #files that cant be uploaded to the certain site
@@ -26,6 +26,7 @@ aThread.getCurrentIDs()
 aThread.upload()
 print("Posts Uploaded!")
 aThread.saveIDs("write")
+deleteImageFiles()
 print("Finished!")
 
 
