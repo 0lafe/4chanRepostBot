@@ -125,5 +125,5 @@ def deleteImageFiles():
     files = os.listdir(filePath)
     for file in files:
         if file != PLACEHOLDERNAME:
-            afilePath = parentDirPath + file
+            afilePath = filePath + file
             os.remove(afilePath)
