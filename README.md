@@ -8,7 +8,7 @@ Current features:
 
     Can manage multiple accounts
   
-    treads some as thread posters and one as a universal reply bot
+    treats some as thread posters and one as a universal reply bot
   
     some checks for image incompatibility
   
